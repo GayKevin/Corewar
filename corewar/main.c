@@ -5,16 +5,18 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Mar 18 16:20:48 2014 Maxime Limone
-** Last update Tue Mar 18 22:09:59 2014 Kevin Gay
+** Last update Tue Mar 18 22:27:55 2014 Kevin Gay
 */
 
 #include "corewar.h"
 
 int		main(int ac, char **av)
 {
+  t_core	co;
+
   if (ac < 1)
     return (0);
-  if (find_option_dump(av) == 1)
+  if (find_option_dump(av, &co) == 1)
     return (1);
   return (0);
 }
