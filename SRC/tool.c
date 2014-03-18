@@ -5,8 +5,10 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Mar 18 16:22:11 2014 Maxime Limone
-** Last update Tue Mar 18 16:22:14 2014 Maxime Limone
+** Last update Tue Mar 18 22:07:22 2014 Kevin Gay
 */
+
+#include <unistd.h>
 
 void	my_putchar(char c)
 {
@@ -26,7 +28,7 @@ void	my_putstr(char *str)
     }
 }
 
-int	my_putnbr(int nb)
+void	my_putnbr(int nb)
 {
   int	a;
 

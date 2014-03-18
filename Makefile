@@ -5,13 +5,15 @@
 ## Login   <limone_m@epitech.net>
 ## 
 ## Started on  Tue Mar 18 16:18:17 2014 Maxime Limone
-## Last update Tue Mar 18 16:18:24 2014 Maxime Limone
+## Last update Tue Mar 18 22:08:23 2014 Kevin Gay
 ##
 
 SRC_ASM		= asm/main.c \
 		  SRC/tool.c \
 
 SRC_COR		= corewar/main.c \
+		  corewar/dump.c \
+	   	  SRC/my_strcmp.c \
 		  SRC/tool.c \
 
 NAME_ASM	= asm/asm
@@ -23,6 +25,8 @@ OBJ_ASM		= $(SRC_ASM:.c=.o)
 OBJ_COR		= $(SRC_COR:.c=.o)
 
 CC		= cc
+
+CFLAGS		= -Wall -g -IInclude
 
 RM		= rm -f
 
