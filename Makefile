@@ -5,13 +5,14 @@
 ## Login   <limone_m@epitech.net>
 ## 
 ## Started on  Tue Mar 18 16:18:17 2014 Maxime Limone
-## Last update Wed Mar 19 19:51:41 2014 Maxime Limone
+## Last update Wed Mar 19 20:45:25 2014 Maxime Limone
 ##
 
 SRC_ASM		= asm/main.c \
 		  asm/gere_err.c \
 		  asm/pars_file.c \
 		  SRC/tool.c \
+		  SRC/get_next_line.c \
 
 SRC_COR		= corewar/main.c \
 		  corewar/dump.c \
