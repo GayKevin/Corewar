@@ -9,6 +9,8 @@
 ##
 
 SRC_ASM		= asm/main.c \
+		  asm/gere_err.c \
+                  asm/pars_file.c \
 		  SRC/tool.c \
 
 SRC_COR		= corewar/main.c \
