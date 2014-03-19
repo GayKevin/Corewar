@@ -5,22 +5,24 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Mar 18 16:19:28 2014 Maxime Limone
-** Last update Tue Mar 18 20:08:54 2014 Maxime Limone
+** Last update Wed Mar 19 20:08:41 2014 Maxime Limone
 */
 
 #include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include "asm.h"
 
 int		main(int argc, char **argv)
 {
-  int		fd;
+  t_pars	s;
 
   if (argc < 2)
     my_exit_err("Usage: ./asm/asm [file_name].s");
   check_file_name(argv[1]);
-  if ((fd = open(argv[1], O_RDONLY)) == -1)
+  if ((s.fd = open(argv[1], O_RDONLY)) == -1)
     my_exit_err("file not found");
+  pars_file_line(&s);
   return (0);
 }

@@ -5,12 +5,23 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Mar 18 16:22:11 2014 Maxime Limone
-** Last update Tue Mar 18 16:22:14 2014 Maxime Limone
+** Last update Wed Mar 19 20:17:16 2014 Maxime Limone
 */
+
+#include <unistd.h>
 
 void	my_putchar(char c)
 {
   write(1, &c, 1);
+}
+
+int	my_strlen(char *str)
+{
+  int	i;
+
+  i = 0;
+  while (str[i++] != '\0');
+  return (i);
 }
 
 void	my_putstr(char *str)
@@ -26,7 +37,7 @@ void	my_putstr(char *str)
     }
 }
 
-int	my_putnbr(int nb)
+void	my_putnbr(int nb)
 {
   int	a;
 
