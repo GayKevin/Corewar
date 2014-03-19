@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Wed Mar 19 19:23:38 2014 Maxime Limone
-** Last update Wed Mar 19 20:45:57 2014 Maxime Limone
+** Last update Wed Mar 19 20:49:55 2014 Maxime Limone
 */
 
 #include "asm.h"
@@ -13,5 +13,8 @@
 
 void		pars_file_line(t_pars *s)
 {
+  int	i;
+
+  i = 0;
   while (get_next_line(s->fd));
 }
