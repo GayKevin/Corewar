@@ -5,7 +5,7 @@
 ** Login   <gay_k@epitech.net>
 ** 
 ** Started on  Tue Mar 18 21:46:15 2014 Kevin Gay
-** Last update Tue Mar 18 22:29:10 2014 Kevin Gay
+** Last update Wed Mar 19 14:18:06 2014 Kevin Gay
 */
 
 #include <stdlib.h>
@@ -23,7 +23,7 @@ int	dump_found(char *av, t_core *co)
 	return (1);
       }
   co->dmp = my_getnbr(av);
-  my_put_nbr(co->dmp);
+  my_putnbr(co->dmp);
   return (0);
 }
 
