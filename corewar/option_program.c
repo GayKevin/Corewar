@@ -5,7 +5,7 @@
 ** Login   <gay_k@epitech.net>
 ** 
 ** Started on  Wed Mar 19 13:16:52 2014 Kevin Gay
-** Last update Thu Mar 20 11:35:09 2014 Kevin Gay
+** Last update Thu Mar 20 15:22:36 2014 Kevin Gay
 ** Last update Wed Mar 19 15:07:30 2014 Kevin Gay
 */
 
@@ -30,7 +30,8 @@ int	find_program_number(char *av, t_core *co, int p)
       }
 
   tab_func = tab_function_pro_nbr(tab_func);
-  tab_func[p] (av, co, p);
+  if (tab_func[p] (av, co, p) == 1)
+    return (1);
   free(tab_func);
   return (0);
 }
@@ -49,7 +50,8 @@ int	find_load_adress(char *av, t_core *co, int p)
 	return (1);
       }
   tab_func = tab_function_pro_add(tab_func);
-  tab_func[p] (av, co, p);
+  if (tab_func[p] (av, co, p) == 1)
+    return (1);
   free(tab_func);
   return (0);
 }
@@ -77,8 +79,9 @@ int	find_option_program(char **av, t_core *co)
 	if (find_program_number(av[i + 1], co, p) == 1)
 	  return (1);
       if (my_strcmp(av[i], "-a") == 0)
-	find_load_adress(av[i + 1], co, p);
-      if (my_strcmp_core(av[i], ".core") == 0)
+	if (find_load_adress(av[i + 1], co, p) == 1)
+	  return (1);
+      if (my_strcmp_core(av[i], ".cor") == 0)
 	{
           find_name_program(av[i], p, co);
 	  ++p;
