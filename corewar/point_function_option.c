@@ -5,23 +5,12 @@
 ** Login   <gay_k@epitech.net>
 **
 ** Started on  Thu Mar 20 11:12:20 2014 Kevin Gay
-** Last update Thu Mar 20 15:54:26 2014 Kevin Gay
+** Last update Thu Mar 20 22:18:56 2014 Kevin Gay
 */
 
 #include <unistd.h>
 #include <stdlib.h>
 #include "corewar.h"
-
-flag	*tab_function_pro_name(flag *tab_function_pro_name)
-{
-  if ((tab_function_pro_name = malloc(sizeof(flag) * 4)) == NULL)
-    return (NULL);
-  tab_function_pro_name[1] = pro_name_1;
-  tab_function_pro_name[2] = pro_name_2;
-  tab_function_pro_name[3] = pro_name_3;
-  tab_function_pro_name[4] = pro_name_4;
-  return (tab_function_pro_name);
-}
 
 flag	*tab_function_pro_add(flag *tab_function_pro_add)
 {
