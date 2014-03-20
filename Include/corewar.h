@@ -6,13 +6,13 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Mar 18 16:29:04 2014 Maxime Limone
-** Last update Thu Mar 20 15:53:03 2014 Kevin Gay
+** Last update Thu Mar 20 20:31:19 2014 Kevin Gay
 ** Last update Wed Mar 19 15:07:04 2014 Kevin Gay
 */
 
 #ifndef COREWAR_H_
 # define COREWAR_H_
-
+#include "op.h"
 typedef struct	s_core
 {
   int		dmp;
@@ -34,7 +34,7 @@ typedef	int (*flag)(char *av, t_core *co, int p);
 
 char    *my_strcpy_name(char *dest, char *src);
 int	find_option_dump(char **av, t_core *co);
-int	find_option_program(char **av, t_core *co);
+int	find_option_program(char **av, t_core *co, header_t *hd);
 int	my_strcmp(char *str1, char *str2);
 int	my_strcmp_core(char *str1, char *str2);
 void	my_putchar(char c);
