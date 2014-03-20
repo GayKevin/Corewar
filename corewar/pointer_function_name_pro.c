@@ -1,11 +1,11 @@
 /*
 ** pointer_function_name_pro.c for prog name in /home/gay_k/rendu/Corewar
-** 
+**
 ** Made by Kevin Gay
 ** Login   <gay_k@epitech.net>
-** 
+**
 ** Started on  Thu Mar 20 10:32:16 2014 Kevin Gay
-** Last update Thu Mar 20 14:59:08 2014 Kevin Gay
+** Last update Thu Mar 20 15:55:26 2014 Kevin Gay
 */
 
 #include <stdlib.h>

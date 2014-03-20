@@ -5,7 +5,7 @@
 ** Login   <gay_k@epitech.net>
 ** 
 ** Started on  Wed Mar 19 13:16:52 2014 Kevin Gay
-** Last update Thu Mar 20 15:22:36 2014 Kevin Gay
+** Last update Thu Mar 20 15:53:49 2014 Kevin Gay
 ** Last update Wed Mar 19 15:07:30 2014 Kevin Gay
 */
 
@@ -56,7 +56,7 @@ int	find_load_adress(char *av, t_core *co, int p)
   return (0);
 }
 
-void	find_name_program(char *av, int p, t_core *co)
+int	find_name_program(char *av, int p, t_core *co)
 {
   flag	*tab_func;
 
@@ -64,6 +64,7 @@ void	find_name_program(char *av, int p, t_core *co)
   tab_func = tab_function_pro_name(tab_func);
   tab_func[p] (av, co, p);
   free(tab_func);
+  return (0);
 }
 
 int	find_option_program(char **av, t_core *co)

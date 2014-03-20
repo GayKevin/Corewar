@@ -1,11 +1,11 @@
 /*
 ** pointer_function_pro_nbr.c for pro nbr in /home/gay_k/rendu/Corewar
-** 
+**
 ** Made by Kevin Gay
 ** Login   <gay_k@epitech.net>
-** 
+**
 ** Started on  Thu Mar 20 11:28:43 2014 Kevin Gay
-** Last update Thu Mar 20 15:01:21 2014 Kevin Gay
+** Last update Thu Mar 20 15:55:12 2014 Kevin Gay
 */
 
 #include "corewar.h"

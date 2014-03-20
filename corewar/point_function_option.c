@@ -1,11 +1,11 @@
 /*
 ** point_function_option.c for pointer in /home/gay_k/rendu/Corewar/corewar
-** 
+**
 ** Made by Kevin Gay
 ** Login   <gay_k@epitech.net>
-** 
+**
 ** Started on  Thu Mar 20 11:12:20 2014 Kevin Gay
-** Last update Thu Mar 20 11:34:20 2014 Kevin Gay
+** Last update Thu Mar 20 15:54:26 2014 Kevin Gay
 */
 
 #include <unistd.h>
