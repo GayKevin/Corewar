@@ -6,7 +6,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Mar 18 16:29:04 2014 Maxime Limone
-** Last update Thu Mar 20 09:19:18 2014 Kevin Gay
+** Last update Thu Mar 20 11:34:19 2014 Kevin Gay
 ** Last update Wed Mar 19 15:07:04 2014 Kevin Gay
 */
 
@@ -30,13 +30,13 @@ typedef struct	s_core
   char		*p4;
 }		t_core;
 
+typedef	void (*flag)(char *av, t_core *co, int p);
+
 char    *my_strcpy_name(char *dest, char *src);
 int	find_option_dump(char **av, t_core *co);
 int	find_option_program(char **av, t_core *co);
 int	my_strcmp(char *str1, char *str2);
 int	my_strcmp_core(char *str1, char *str2);
-int	find_option_dump(char **av, t_core *co);
-int	find_option_program(char **av, t_core *co);
 void	my_putchar(char c);
 void	my_putstr(char *str);
 void	my_putnbr(int nb);
@@ -45,4 +45,20 @@ int	my_strcmp(char *str1, char *str2);
 int	my_strcmp_(char *str1, char *str2);
 int     my_strlen(char *str);
 char    *my_strcpy_name(char *dest, char *src);
+void	pro_add_1(char *av, t_core *co, int p);
+void	pro_add_2(char *av, t_core *co, int p);
+void	pro_add_3(char *av, t_core *co, int p);
+void	pro_add_4(char *av, t_core *co, int p);
+void	pro_name_1(char *av, t_core *co, int p);
+void	pro_name_2(char *av, t_core *co, int p);
+void	pro_name_3(char *av, t_core *co, int p);
+void	pro_name_4(char *av, t_core *co, int p);
+void	pro_nbr_1(char *av, t_core *co, int p);
+void	pro_nbr_2(char *av, t_core *co, int p);
+void	pro_nbr_3(char *av, t_core *co, int p);
+void	pro_nbr_4(char *av, t_core *co, int p);
+flag	*tab_function_pro_name(flag *tab_function_pro_name);
+flag	*tab_function_pro_add(flag *tab_function_pro_add);
+flag	*tab_function_pro_nbr(flag *tab_function_pro_nbr);
+
 #endif /*COREWAR_H_*/

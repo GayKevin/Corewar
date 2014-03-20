@@ -5,9 +5,10 @@
 ** Login   <gay_k@epitech.net>
 ** 
 ** Started on  Wed Feb 26 13:33:18 2014 Kevin Gay
-<<<<<<< HEAD
-** Last update Thu Mar 20 09:21:42 2014 Kevin Gay
+** Last update Thu Mar 20 11:08:01 2014 Kevin Gay
 */
+
+#include "corewar.h"
 
 int	my_strcmp(char *s1, char *s2)
 {
@@ -28,17 +29,18 @@ int	my_strcmp(char *s1, char *s2)
 int	my_strcmp_core(char *str1, char *str2)
 {
   int	i;
+  int	l;
 
+  l = 0;
+  l = my_strlen(str2) - 1;
   i = 0;
-  while (str1[i] == str2[i] && str2[i + 1] != '\0')
-    i++;
-  if (str1[i - 4] == '.' && str2[i - 4] == '.')
-    if (str1[i - 3] == 'c' && str2[i - 3] == 'c')
-      if (str1[i - 2] == 'o' && str2[i - 2] == 'o')
-	if (str1[i - 1] == 'r' && str2[i - 1] == 'r')
-	  if (str1[i] == 'e' && str2[i] == 'e')
-	    return (0);
-  if (str1[i] != str2[i])
-    return (1);
-  return (0);
+  i = my_strlen(str1) - 1;
+  while (str1[i] == str2[l])
+    {
+      if (l == 0)
+	return (0);
+      --i;
+      --l;
+    }
+  return (1);
 }
