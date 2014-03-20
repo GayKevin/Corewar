@@ -6,7 +6,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Mar 18 16:29:04 2014 Maxime Limone
-** Last update Thu Mar 20 15:00:51 2014 Kevin Gay
+** Last update Thu Mar 20 15:53:03 2014 Kevin Gay
 ** Last update Wed Mar 19 15:07:04 2014 Kevin Gay
 */
 
@@ -60,5 +60,4 @@ int	pro_nbr_4(char *av, t_core *co, int p);
 flag	*tab_function_pro_name(flag *tab_function_pro_name);
 flag	*tab_function_pro_add(flag *tab_function_pro_add);
 flag	*tab_function_pro_nbr(flag *tab_function_pro_nbr);
-
 #endif /*COREWAR_H_*/
