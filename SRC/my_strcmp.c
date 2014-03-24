@@ -5,7 +5,7 @@
 ** Login   <gay_k@epitech.net>
 ** 
 ** Started on  Wed Feb 26 13:33:18 2014 Kevin Gay
-** Last update Wed Mar 19 21:24:03 2014 Maxime Limone
+** Last update Mon Mar 24 15:40:59 2014 Maxime Limone
 */
 
 int	my_strcmp(char *s1, char *s2)
@@ -20,6 +20,22 @@ int	my_strcmp(char *s1, char *s2)
       if (s1[i] != s2[i])
         diff = diff + 1;
       i = i + 1;
+    }
+  return (diff);
+}
+
+int	my_strncmp(char *s1, char *s2, int n)
+{
+  int	i;
+  int	diff;
+
+  i = 0;
+  diff = 0;
+  while (i != n)
+    {
+      if (s1[i] != s2[i])
+        diff++;
+      i++;
     }
   return (diff);
 }
