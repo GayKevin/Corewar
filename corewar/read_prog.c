@@ -5,7 +5,7 @@
 ** Login   <gay_k@epitech.net>
 ** 
 ** Started on  Thu Mar 20 21:57:39 2014 Kevin Gay
-** Last update Mon Mar 24 11:42:10 2014 Kevin Gay
+** Last update Tue Mar 25 10:34:26 2014 Kevin Gay
 */
 
 #include <fcntl.h>
@@ -27,7 +27,7 @@ int	read_file_cor(char *av, int p, t_core *co, header_t *hd)
   /* my_strcpy(co->pr.nme1, hd->prog_name); */
   my_strcpy(co->pr.cmnt1, hd->comment);
   my_putchar('\n');
-  my_putstr(co->pr.cmnt1);
+  //  my_putstr(co->pr.cmnt1);
   my_putstr(hd->comment);
   close(fd);
   free(hd);
