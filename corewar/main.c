@@ -5,9 +5,11 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Mar 18 16:20:48 2014 Maxime Limone
-** Last update Thu Mar 20 20:20:11 2014 Kevin Gay
+** Last update Fri Mar 21 17:11:53 2014 Kevin Gay
 */
 
+
+#include <stdlib.h>
 #include "op.h"
 #include "corewar.h"
 
