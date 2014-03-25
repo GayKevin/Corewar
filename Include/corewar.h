@@ -6,12 +6,27 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Mar 18 16:29:04 2014 Maxime Limone
-** Last update Thu Mar 20 15:53:03 2014 Kevin Gay
+** Last update Mon Mar 24 11:27:57 2014 Kevin Gay
 ** Last update Wed Mar 19 15:07:04 2014 Kevin Gay
 */
 
 #ifndef COREWAR_H_
 # define COREWAR_H_
+# define PROG_NAME	128
+# define COMMENT	2048
+#include "op.h"
+
+struct		s_pr
+{
+  char		nme1[PROG_NAME];
+  char		cmnt1[COMMENT];
+  char		*nme2;
+  char		*cmnt2;
+  char		*nme3;
+  char		*cmnt3;
+  char		*nme4;
+  char		*cmnt4;
+};
 
 typedef struct	s_core
 {
@@ -28,15 +43,17 @@ typedef struct	s_core
   char		*p2;
   char		*p3;
   char		*p4;
+  struct s_pr	pr;
 }		t_core;
 
 typedef	int (*flag)(char *av, t_core *co, int p);
 
-char    *my_strcpy_name(char *dest, char *src);
 int	find_option_dump(char **av, t_core *co);
-int	find_option_program(char **av, t_core *co);
+int	find_option_program(char **av, t_core *co, header_t *hd);
 int	my_strcmp(char *str1, char *str2);
 int	my_strcmp_core(char *str1, char *str2);
+char    *my_strcpy(char *dest, char *src);
+char    *my_strcpy_name(char *dest, char *src);
 void	my_putchar(char c);
 void	my_putstr(char *str);
 void	my_putnbr(int nb);
@@ -44,7 +61,6 @@ int	my_getnbr(char *str);
 int	my_strcmp(char *str1, char *str2);
 int	my_strcmp_(char *str1, char *str2);
 int     my_strlen(char *str);
-char    *my_strcpy_name(char *dest, char *src);
 int	pro_add_1(char *av, t_core *co, int p);
 int	pro_add_2(char *av, t_core *co, int p);
 int	pro_add_3(char *av, t_core *co, int p);
@@ -57,7 +73,7 @@ int	pro_nbr_1(char *av, t_core *co, int p);
 int	pro_nbr_2(char *av, t_core *co, int p);
 int	pro_nbr_3(char *av, t_core *co, int p);
 int	pro_nbr_4(char *av, t_core *co, int p);
-flag	*tab_function_pro_name(flag *tab_function_pro_name);
+int	read_file_cor(char *av, int p, t_core *co, header_t *hd);
 flag	*tab_function_pro_add(flag *tab_function_pro_add);
 flag	*tab_function_pro_nbr(flag *tab_function_pro_nbr);
 #endif /*COREWAR_H_*/

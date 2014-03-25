@@ -44,7 +44,7 @@ typedef char    args_type_t;
                                    dans r1 (4 octecs )) */
 #define T_LAB           8       /* LABEL */
 
-struct  op_s    
+struct  op_s
 {
    char         *mnemonique;
    char         nbr_args;
@@ -70,7 +70,6 @@ typedef struct op_s     op_t;
 
 
 extern  op_t    op_tab[];
-
 
 /*
  ** header
