@@ -1,3 +1,4 @@
+
 /*
 ** corewar.h for corewar in /home/limone_m/rendu/CPE_2014_corewar/Include
 ** 
@@ -5,7 +6,8 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Mar 18 16:29:04 2014 Maxime Limone
-** Last update Wed Mar 19 21:14:32 2014 Maxime Limone
+** Last update Thu Mar 20 09:19:18 2014 Kevin Gay
+** Last update Wed Mar 19 15:07:04 2014 Kevin Gay
 */
 
 #ifndef COREWAR_H_
@@ -13,10 +15,6 @@
 
 typedef struct	s_core
 {
-  char		*p1;
-  char		*p2;
-  char		*p3;
-  char		*p4;
   int		dmp;
   int		pn1;
   int		pn2;
@@ -26,6 +24,10 @@ typedef struct	s_core
   int		pa2;
   int		pa3;
   int		pa4;
+  char		*p1;
+  char		*p2;
+  char		*p3;
+  char		*p4;
 }		t_core;
 
 char    *my_strcpy_name(char *dest, char *src);
@@ -33,4 +35,14 @@ int	find_option_dump(char **av, t_core *co);
 int	find_option_program(char **av, t_core *co);
 int	my_strcmp(char *str1, char *str2);
 int	my_strcmp_core(char *str1, char *str2);
+int	find_option_dump(char **av, t_core *co);
+int	find_option_program(char **av, t_core *co);
+void	my_putchar(char c);
+void	my_putstr(char *str);
+void	my_putnbr(int nb);
+int	my_getnbr(char *str);
+int	my_strcmp(char *str1, char *str2);
+int	my_strcmp_(char *str1, char *str2);
+int     my_strlen(char *str);
+char    *my_strcpy_name(char *dest, char *src);
 #endif /*COREWAR_H_*/

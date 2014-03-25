@@ -5,7 +5,12 @@
 ** Login   <gay_k@epitech.net>
 ** 
 ** Started on  Wed Feb 26 13:33:18 2014 Kevin Gay
+<<<<<<< HEAD
 ** Last update Mon Mar 24 15:40:59 2014 Maxime Limone
+=======
+<<<<<<< HEAD
+** Last update Thu Mar 20 09:21:42 2014 Kevin Gay
+>>>>>>> master
 */
 
 int	my_strcmp(char *s1, char *s2)
