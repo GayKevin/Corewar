@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Mar 18 16:19:28 2014 Maxime Limone
-** Last update Wed Mar 19 20:08:41 2014 Maxime Limone
+** Last update Mon Mar 24 15:59:34 2014 Maxime Limone
 */
 
 #include <stdlib.h>
@@ -20,9 +20,14 @@ int		main(int argc, char **argv)
 
   if (argc < 2)
     my_exit_err("Usage: ./asm/asm [file_name].s");
-  check_file_name(argv[1]);
-  if ((s.fd = open(argv[1], O_RDONLY)) == -1)
-    my_exit_err("file not found");
-  pars_file_line(&s);
+  s.champ_name = argv[1];
+  check_file_name(s.champ_name);
+  if ((s.fd = open(s.champ_name, O_RDONLY)) == -1)
+    {
+      my_putstr("\e[1;31mError: file not found\e[0m\n");
+      return (0);
+    }
+  if (pars_file_line(&s) != 0)
+    return (0);
   return (0);
 }

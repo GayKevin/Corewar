@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Mar 18 20:02:24 2014 Maxime Limone
-** Last update Wed Mar 19 20:10:16 2014 Maxime Limone
+** Last update Mon Mar 24 16:35:58 2014 Maxime Limone
 */
 
 #ifndef ASM_H_
@@ -13,12 +13,19 @@
 
 typedef struct	s_pars
 {
-  int		fd;
+  char		*champ_name;
   char		*line;
+  int		fd;
 }		t_pars;
+
+typedef struct	s_get_data
+{
+  char		*name;
+  char		*comment;
+}		t_get_data;
 
 void		check_file_name(char *file);
 void		my_exit_err(char *message_err);
-void		pars_file_line(t_pars *s);
+int		pars_file_line(t_pars *s);
 
 #endif /*ASM_H_*/
