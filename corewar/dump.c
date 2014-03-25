@@ -5,7 +5,7 @@
 ** Login   <gay_k@epitech.net>
 ** 
 ** Started on  Tue Mar 18 21:46:15 2014 Kevin Gay
-** Last update Thu Mar 20 09:19:47 2014 Kevin Gay
+** Last update Thu Mar 20 10:53:07 2014 Kevin Gay
 ** Last update Wed Mar 19 14:18:06 2014 Kevin Gay
 */
 
@@ -25,7 +25,6 @@ int	dump_found(char *av, t_core *co)
 	return (1);
       }
   co->dmp = my_getnbr(av);
-  my_putnbr(co->dmp);
   return (0);
 }
 
