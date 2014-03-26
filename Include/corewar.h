@@ -1,4 +1,3 @@
-
 /*
 ** corewar.h for corewar in /home/limone_m/rendu/CPE_2014_corewar/Include
 ** 
@@ -6,26 +5,26 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Mar 18 16:29:04 2014 Maxime Limone
-** Last update Mon Mar 24 11:27:57 2014 Kevin Gay
+** Last update Wed Mar 26 11:43:27 2014 Kevin Gay
 ** Last update Wed Mar 19 15:07:04 2014 Kevin Gay
 */
 
 #ifndef COREWAR_H_
 # define COREWAR_H_
-# define PROG_NAME	128
-# define COMMENT	2048
+# define PROG_NAME	129
+# define COMMENT	2049
 #include "op.h"
 
 struct		s_pr
 {
   char		nme1[PROG_NAME];
   char		cmnt1[COMMENT];
-  char		*nme2;
-  char		*cmnt2;
-  char		*nme3;
-  char		*cmnt3;
-  char		*nme4;
-  char		*cmnt4;
+  char		nme2[PROG_NAME];
+  char		cmnt2[COMMENT];
+  char		nme3[PROG_NAME];
+  char		cmnt3[COMMENT];
+  char		nme4[PROG_NAME];
+  char		cmnt4[COMMENT];
 };
 
 typedef struct	s_core
@@ -73,7 +72,11 @@ int	pro_nbr_1(char *av, t_core *co, int p);
 int	pro_nbr_2(char *av, t_core *co, int p);
 int	pro_nbr_3(char *av, t_core *co, int p);
 int	pro_nbr_4(char *av, t_core *co, int p);
+int	read_header1(t_core *co, header_t *hd);
 int	read_file_cor(char *av, int p, t_core *co, header_t *hd);
+int	read_header2(t_core *co, header_t *hd);
+int	read_header3(t_core *co, header_t *hd);
+int	read_header4(t_core *co, header_t *hd);
 flag	*tab_function_pro_add(flag *tab_function_pro_add);
 flag	*tab_function_pro_nbr(flag *tab_function_pro_nbr);
 #endif /*COREWAR_H_*/
