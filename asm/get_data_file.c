@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Mon Mar 24 16:18:26 2014 Maxime Limone
-** Last update Thu Mar 27 16:36:05 2014 Maxime Limone
+** Last update Thu Mar 27 17:32:12 2014 Maxime Limone
 */
 
 #include <sys/types.h>
@@ -45,6 +45,7 @@ int		get_name(t_pars *s, header_t *o)
       while (n != PROG_NAME_LENGTH+1)
 	o->prog_name[n++] = '\0';
     }
+  return (0);
 }
 
 int		get_comment(t_pars *s, header_t *o)
@@ -54,7 +55,6 @@ int		get_comment(t_pars *s, header_t *o)
 
   n = 0;
   i = 0;
-  my_putstr(s->line);
   while (s->line[i] != '\"' && i < s->size_line)
     i++;
   if (i == s->size_line)
@@ -75,6 +75,7 @@ int		get_comment(t_pars *s, header_t *o)
       while (n != COMMENT_LENGTH+1)
 	o->comment[n++] = '\0';
     }
+  return (0);
 }
 
 char		*new_name_cor(char *s_name)
@@ -82,11 +83,9 @@ char		*new_name_cor(char *s_name)
   char		*cor;
   char		*cor_name;
   int		i;
-  int		e;
 
   cor = ".cor";
   i = -1;
-  e = -1;
   if ((cor_name = malloc(sizeof(*s_name) + 5)) == NULL)
     return (NULL);
   while (s_name[++i] != '.')
@@ -117,5 +116,6 @@ int		print_in_file(t_pars *s, header_t *o)
   my_putnbr_infile(invert_endian((o->magic = 0xea83f3)), fd);
   my_putstr_infile(o->prog_name, fd, PROG_NAME_LENGTH);
   my_putnbr_infile(invert_endian(0x04), fd);
-  //my_putstr_infile(o->comment, 1, COMMENT_LENGTH);
+  my_putstr_infile(o->comment, fd, COMMENT_LENGTH);
+  return (0);
 }

@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Mar 18 17:06:04 2014 Maxime Limone
-** Last update Wed Mar 26 20:23:58 2014 Maxime Limone
+** Last update Thu Mar 27 17:30:53 2014 Maxime Limone
 */
 
 #include <stdlib.h>
@@ -19,6 +19,7 @@ int		check_file_name(char *file)
   i = my_strlen(file) - 2;
   if (file[i] != 's' && file[i - 1] != '.')
     return (-2);
+  return (0);
 }
 
 void		my_err(char *message_err, t_pars *s)
