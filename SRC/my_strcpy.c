@@ -5,7 +5,11 @@
 ** Login   <gay_k@epitech.net>
 ** 
 ** Started on  Fri Mar  7 12:55:20 2014 Kevin Gay
+<<<<<<< HEAD
 ** Last update Mon Mar 24 11:06:01 2014 Kevin Gay
+=======
+** Last update Wed Mar 26 20:39:26 2014 Maxime Limone
+>>>>>>> cf80a8c8568c06a462ef5c895a3246ff21700e87
 */
 
 char    *my_strcpy(char *dest, char *src)

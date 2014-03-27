@@ -5,26 +5,27 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Mar 18 17:06:04 2014 Maxime Limone
-** Last update Wed Mar 19 20:15:17 2014 Maxime Limone
+** Last update Wed Mar 26 20:23:58 2014 Maxime Limone
 */
 
 #include <stdlib.h>
 #include "asm.h"
 #include "tool.h"
 
-void		check_file_name(char *file)
+int		check_file_name(char *file)
 {
   int	i;
 
   i = my_strlen(file) - 2;
   if (file[i] != 's' && file[i - 1] != '.')
-    my_exit_err("incompatible file (type file is [.s])");
+    return (-2);
 }
 
-void		my_exit_err(char *message_err)
+void		my_err(char *message_err, t_pars *s)
 {
   my_putstr("\e[1;31mError: ");
+  my_putstr(s->champ_name);
+  my_putstr(": ");
   my_putstr(message_err);
   my_putstr("\e[0m\n");
-  exit(3);
 }

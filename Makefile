@@ -5,15 +5,28 @@
 ## Login   <limone_m@epitech.net>
 ## 
 ## Started on  Tue Mar 18 16:18:17 2014 Maxime Limone
+<<<<<<< HEAD
 ## Last update Thu Mar 20 22:19:24 2014 Kevin Gay
 ## Last update Wed Mar 19 15:04:18 2014 Kevin Gay
+=======
+## Last update Wed Mar 26 20:57:12 2014 Maxime Limone
+>>>>>>> cf80a8c8568c06a462ef5c895a3246ff21700e87
 ##
 
 SRC_ASM		= asm/main.c \
 		  asm/gere_err.c \
+<<<<<<< HEAD
                   asm/pars_file.c \
 		  SRC/tool.c \
+=======
+		  asm/get_data_file.c \
+		  asm/pars_file.c \
+		  asm/put_infile_tool.c \
+>>>>>>> cf80a8c8568c06a462ef5c895a3246ff21700e87
 		  SRC/get_next_line.c \
+		  SRC/my_strcat.c \
+		  SRC/my_strcmp.c \
+		  SRC/tool.c \
 
 SRC_COR		= corewar/main.c \
 		  corewar/dump.c \
@@ -36,7 +49,7 @@ OBJ_COR		= $(SRC_COR:.c=.o)
 
 CC		= cc
 
-CFLAGS		= -Wall -g -IInclude
+CFLAGS		= -g -IInclude
 
 RM		= rm -f
 
