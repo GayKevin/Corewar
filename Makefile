@@ -5,15 +5,13 @@
 ## Login   <limone_m@epitech.net>
 ## 
 ## Started on  Tue Mar 18 16:18:17 2014 Maxime Limone
-## Last update Thu Mar 27 16:48:01 2014 Maxime Limone
+## Last update Thu Mar 27 17:27:28 2014 Kevin Gay
 ## Last update Wed Mar 19 15:04:18 2014 Kevin Gay
 ## Last update Wed Mar 26 20:57:12 2014 Maxime Limone
 ##
 
 SRC_ASM		= asm/main.c \
 		  asm/gere_err.c \
-                  asm/pars_file.c \
-		  SRC/tool.c \
 		  asm/get_data_file.c \
 		  asm/pars_file.c \
 		  asm/put_infile_tool.c \
@@ -45,7 +43,6 @@ OBJ_COR		= $(SRC_COR:.c=.o)
 CC		= cc
 
 CFLAGS		= -IInclude -Wall -g
-CFLAGS		= -g -IInclude
 
 RM		= rm -f
 
