@@ -5,15 +5,20 @@
 ## Login   <limone_m@epitech.net>
 ## 
 ## Started on  Tue Mar 18 16:18:17 2014 Maxime Limone
-## Last update Wed Mar 26 11:29:41 2014 Kevin Gay
+## Last update Thu Mar 27 17:27:28 2014 Kevin Gay
 ## Last update Wed Mar 19 15:04:18 2014 Kevin Gay
+## Last update Wed Mar 26 20:57:12 2014 Maxime Limone
 ##
 
 SRC_ASM		= asm/main.c \
 		  asm/gere_err.c \
-                  asm/pars_file.c \
-		  SRC/tool.c \
+		  asm/get_data_file.c \
+		  asm/pars_file.c \
+		  asm/put_infile_tool.c \
 		  SRC/get_next_line.c \
+		  SRC/my_strcat.c \
+		  SRC/my_strcmp.c \
+		  SRC/tool.c \
 
 SRC_COR		= corewar/main.c \
 		  corewar/dump.c \
@@ -27,7 +32,7 @@ SRC_COR		= corewar/main.c \
 	   	  SRC/my_strcmp.c \
 		  SRC/tool.c
 
-#NAME_ASM	= asm/asm
+NAME_ASM	= asm/asm
 
 NAME_COR	= corewar/corewar
 
@@ -43,8 +48,8 @@ RM		= rm -f
 
 all:		$(NAME_ASM) $(NAME_COR)
 
-#$(NAME_ASM):	$(OBJ_ASM)
-#		$(CC) -o $(NAME_ASM) $(OBJ_ASM)
+$(NAME_ASM):	$(OBJ_ASM)
+		$(CC) -o $(NAME_ASM) $(OBJ_ASM)
 
 $(NAME_COR):	$(OBJ_COR)
 		$(CC) $(CFLAGS) -o $(NAME_COR) $(OBJ_COR)
