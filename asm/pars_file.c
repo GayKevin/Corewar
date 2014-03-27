@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Wed Mar 19 19:23:38 2014 Maxime Limone
-** Last update Wed Mar 26 21:20:15 2014 Maxime Limone
+** Last update Thu Mar 27 16:37:31 2014 Maxime Limone
 */
 
 #include "asm.h"
@@ -30,8 +30,11 @@ int		pars_file_line(t_pars *s)
 	    if (get_name(s, &o) == -3)
 	      return (-3);
 	  else if (my_strncmp(s->line, COMMENT_CMD_STRING, 8) == 0)
-	    if (get_comment(s, &o) == -3)
-	      return (-3);
+	    {
+	      my_putchar('+');
+	      if (get_comment(s, &o) == -3)
+		return (-3);
+	    }
 	  else
 	    {
 	      my_err("invalid syntax expected ‘.’", s);
