@@ -5,11 +5,8 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Wed Mar 19 20:11:35 2014 Maxime Limone
-<<<<<<< HEAD
-** Last update Thu Mar 20 09:20:41 2014 Kevin Gay
-=======
+** Last update Thu Mar 27 18:14:11 2014 Kevin Gay
 ** Last update Wed Mar 26 20:43:33 2014 Maxime Limone
->>>>>>> Maxime
 */
 
 #ifndef TOOL_H_
