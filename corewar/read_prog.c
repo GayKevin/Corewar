@@ -5,7 +5,7 @@
 ** Login   <gay_k@epitech.net>
 ** 
 ** Started on  Thu Mar 20 21:57:39 2014 Kevin Gay
-** Last update Mon Mar 24 11:42:10 2014 Kevin Gay
+** Last update Wed Mar 26 13:35:29 2014 Kevin Gay
 */
 
 #include <fcntl.h>
@@ -14,9 +14,18 @@
 #include "corewar.h"
 #include "op.h"
 
+void	tab_function_read(int (*tab_func[5])(t_core *co, header_t *hd))
+{
+  tab_func[1] = &read_header1;
+  tab_func[2] = &read_header2;
+  tab_func[3] = &read_header3;
+  tab_func[4] = &read_header4;
+}
+
 int	read_file_cor(char *av, int p, t_core *co, header_t *hd)
 {
   int	fd;
+  int	(*tab_func[5])(t_core *co, header_t *hd);
 
   if ((hd = malloc(sizeof(hd))) == NULL)
     return (1);
@@ -24,13 +33,10 @@ int	read_file_cor(char *av, int p, t_core *co, header_t *hd)
     return (1);
   if ((read(fd, hd, sizeof(hd))) == -1)
     return (1);
-  /* my_strcpy(co->pr.nme1, hd->prog_name); */
-  my_strcpy(co->pr.cmnt1, hd->comment);
-  my_putchar('\n');
-  my_putstr(co->pr.cmnt1);
-  my_putstr(hd->comment);
+  tab_function_read(tab_func);
+  if ((tab_func[p](co, hd)) == 1)
+    return (1);
   close(fd);
   free(hd);
-  /* my_putstr(co->pr.nme1); */
   return (0);
 }
