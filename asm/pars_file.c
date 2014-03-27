@@ -5,17 +5,18 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Wed Mar 19 19:23:38 2014 Maxime Limone
-** Last update Tue Mar 25 10:04:27 2014 Maxime Limone
+** Last update Wed Mar 26 21:20:15 2014 Maxime Limone
 */
 
-#include "op.h"
 #include "asm.h"
-#include "tool.h"
+#include "asm_get_data_file.h"
 #include "get_next_line.h"
+#include "my_strcmp.h"
+#include "tool.h"
+#include "op.h"
 
 int		pars_file_line(t_pars *s)
 {
-  t_get_data	d;
   header_t	o;
   int		i;
 
@@ -26,16 +27,17 @@ int		pars_file_line(t_pars *s)
       if (s->line[0] == '.')
 	{
 	  if (my_strncmp(s->line, NAME_CMD_STRING, 5) == 0)
-	    get_name(&s, &d, &o);
+	    if (get_name(s, &o) == -3)
+	      return (-3);
 	  else if (my_strncmp(s->line, COMMENT_CMD_STRING, 8) == 0)
-	    get_comment(&s, &d, &o);
+	    if (get_comment(s, &o) == -3)
+	      return (-3);
 	  else
 	    {
-	      my_putstr("\e[1;31mError: Invalid syntax in");
-	      my_putstr(s->champ_name);
-	      my_putstr("expected ‘.’\e[0m\n");
+	      my_err("invalid syntax expected ‘.’", s);
 	      return (-3);
 	    }
 	}
     }
+  print_in_file(s, &o);
 }

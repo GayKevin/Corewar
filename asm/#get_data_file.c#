@@ -49,8 +49,8 @@ int		get_name(t_pars *s, header_t *o)
 
 int		get_comment(t_pars *s, header_t *o)
 {
-  int           n;
-  int           i;
+  int		n;
+  int		i;
 
   n = 0;
   i = 0;
