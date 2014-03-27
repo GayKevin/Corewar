@@ -5,16 +5,13 @@
 ** Login   <gay_k@epitech.net>
 ** 
 ** Started on  Wed Mar 26 11:28:23 2014 Kevin Gay
-** Last update Wed Mar 26 11:43:01 2014 Kevin Gay
+** Last update Wed Mar 26 13:31:22 2014 Kevin Gay
 */
 
-#include <string.h>
 #include "corewar.h"
 
 int	read_header1(t_core *co, header_t *hd)
 {
-  memset(co->pr.nme1, 0, 128);
-  memset(co->pr.cmnt1, 0, 128);
   my_strcpy(co->pr.nme1, hd->prog_name);
   my_strcpy(co->pr.cmnt1, hd->comment);
   return (0);

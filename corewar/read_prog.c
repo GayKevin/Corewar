@@ -5,13 +5,12 @@
 ** Login   <gay_k@epitech.net>
 ** 
 ** Started on  Thu Mar 20 21:57:39 2014 Kevin Gay
-** Last update Wed Mar 26 11:46:40 2014 Kevin Gay
+** Last update Wed Mar 26 13:35:29 2014 Kevin Gay
 */
 
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <string.h>
 #include "corewar.h"
 #include "op.h"
 
