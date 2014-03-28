@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Wed Mar 19 20:41:31 2014 Maxime Limone
-** Last update Wed Mar 19 20:41:40 2014 Maxime Limone
+** Last update Fri Mar 28 12:25:29 2014 Kevin Gay
 */
 
 #include <unistd.h>
@@ -20,9 +20,9 @@ char		*get_next_line(const int fd)
   char		*str;
 
   c = 0;
-  str = malloc(sizeof (char *) * LEN);
-  if (str == NULL)
-    return (0);
+  if ((str = malloc(sizeof (char *) * LEN)) == NULL)
+    return (NULL);
+  str = clear_str(str, LEN);
   if ((read(fd, buffer, LEN)) == -1)
     exit(1);
   while (buffer[i] != '\n')

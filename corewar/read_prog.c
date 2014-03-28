@@ -5,7 +5,7 @@
 ** Login   <gay_k@epitech.net>
 ** 
 ** Started on  Thu Mar 20 21:57:39 2014 Kevin Gay
-** Last update Wed Mar 26 13:35:29 2014 Kevin Gay
+** Last update Fri Mar 28 12:24:38 2014 Kevin Gay
 */
 
 #include <fcntl.h>
@@ -30,9 +30,15 @@ int	read_file_cor(char *av, int p, t_core *co, header_t *hd)
   if ((hd = malloc(sizeof(hd))) == NULL)
     return (1);
   if ((fd = open(av, O_RDONLY)) == -1)
-    return (1);
+    {
+      my_putstr("Cannot open the file\n");
+      return (1);
+    }
   if ((read(fd, hd, sizeof(hd))) == -1)
-    return (1);
+    {
+      my_putstr("Cannot read the file\n");
+      return (1);
+    }
   tab_function_read(tab_func);
   if ((tab_func[p](co, hd)) == 1)
     return (1);
