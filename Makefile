@@ -5,7 +5,7 @@
 ## Login   <limone_m@epitech.net>
 ## 
 ## Started on  Tue Mar 18 16:18:17 2014 Maxime Limone
-## Last update Thu Mar 27 18:15:09 2014 Kevin Gay
+## Last update Fri Mar 28 12:21:39 2014 Kevin Gay
 ## Last update Thu Mar 27 17:21:36 2014 Kevin Gay
 ## Last update Wed Mar 19 15:04:18 2014 Kevin Gay
 ## Last update Wed Mar 26 20:57:12 2014 Maxime Limone
@@ -19,6 +19,7 @@ SRC_ASM		= asm/main.c \
 		  SRC/get_next_line.c \
 		  SRC/my_strcat.c \
 		  SRC/my_strcmp.c \
+		  SRC/clear_str.c \
 		  SRC/tool.c \
 
 SRC_COR		= corewar/main.c \

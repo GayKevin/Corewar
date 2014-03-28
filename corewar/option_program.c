@@ -5,7 +5,7 @@
 ** Login   <gay_k@epitech.net>
 ** 
 ** Started on  Wed Mar 19 13:16:52 2014 Kevin Gay
-** Last update Tue Mar 25 12:10:37 2014 Kevin Gay
+** Last update Fri Mar 28 11:59:06 2014 Kevin Gay
 ** Last update Wed Mar 19 15:07:30 2014 Kevin Gay
 */
 
@@ -61,7 +61,7 @@ int	find_option_program(char **av, t_core *co, header_t *hd)
   int	i;
   int	p;
 
-  p = 1;
+  p = 0;
   i = -1;
   while (av[++i] != NULL)
     {
@@ -73,9 +73,14 @@ int	find_option_program(char **av, t_core *co, header_t *hd)
 	  return (1);
       if (my_strcmp_core(av[i], ".cor") == 0)
 	{
-	  read_file_cor(av[i], p, co, hd);
 	  ++p;
+	  read_file_cor(av[i], p, co, hd);
 	}
+    }
+  if (p == 0)
+    {
+      my_putstr("You must put at least one champion : ./corewar 42cor\n");
+      return (1);
     }
   return (0);
 }
