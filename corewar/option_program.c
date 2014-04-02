@@ -5,7 +5,7 @@
 ** Login   <gay_k@epitech.net>
 ** 
 ** Started on  Wed Mar 19 13:16:52 2014 Kevin Gay
-** Last update Fri Mar 28 11:59:06 2014 Kevin Gay
+** Last update Wed Apr  2 16:19:59 2014 Kevin Gay
 ** Last update Wed Mar 19 15:07:30 2014 Kevin Gay
 */
 
@@ -82,5 +82,6 @@ int	find_option_program(char **av, t_core *co, header_t *hd)
       my_putstr("You must put at least one champion : ./corewar 42cor\n");
       return (1);
     }
+  co->p = p;
   return (0);
 }

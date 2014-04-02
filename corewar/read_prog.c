@@ -5,7 +5,7 @@
 ** Login   <gay_k@epitech.net>
 ** 
 ** Started on  Thu Mar 20 21:57:39 2014 Kevin Gay
-** Last update Fri Mar 28 12:24:38 2014 Kevin Gay
+** Last update Wed Apr  2 16:26:05 2014 Kevin Gay
 */
 
 #include <fcntl.h>
@@ -20,6 +20,22 @@ void	tab_function_read(int (*tab_func[5])(t_core *co, header_t *hd))
   tab_func[2] = &read_header2;
   tab_func[3] = &read_header3;
   tab_func[4] = &read_header4;
+}
+
+void	read_entire_file(t_core *co, header_t *hd, int fd, int p)
+{
+  int	i;
+
+  i = -1;
+  co->war1 = malloc(sizeof(char *) * 15);
+  while (++i != 15)
+    co->war1[i] = malloc(sizeof(char) * 520);
+  co->war1 = clear_tab(co->war1, 15, 520);
+  i = -1;
+  while (get_next_line(fd) != NULL)
+    read(fd, co->war1[++i], 512);
+  co->war1[++i] = NULL;
+  my_show_tab(co->war1);
 }
 
 int	read_file_cor(char *av, int p, t_core *co, header_t *hd)
@@ -42,6 +58,7 @@ int	read_file_cor(char *av, int p, t_core *co, header_t *hd)
   tab_function_read(tab_func);
   if ((tab_func[p](co, hd)) == 1)
     return (1);
+  read_entire_file(co, hd, fd, p);
   close(fd);
   free(hd);
   return (0);

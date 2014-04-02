@@ -5,7 +5,7 @@
 ## Login   <limone_m@epitech.net>
 ## 
 ## Started on  Tue Mar 18 16:18:17 2014 Maxime Limone
-## Last update Fri Mar 28 12:21:39 2014 Kevin Gay
+## Last update Wed Apr  2 16:36:16 2014 Kevin Gay
 ## Last update Thu Mar 27 17:21:36 2014 Kevin Gay
 ## Last update Wed Mar 19 15:04:18 2014 Kevin Gay
 ## Last update Wed Mar 26 20:57:12 2014 Maxime Limone
@@ -24,13 +24,20 @@ SRC_ASM		= asm/main.c \
 
 SRC_COR		= corewar/main.c \
 		  corewar/dump.c \
+		  corewar/free_war.c \
 	    	  corewar/pointer_function_add.c \
 	    	  corewar/pointer_function_read.c \
+	    	  corewar/pointer_function_free_war.c \
 	    	  corewar/pointer_function_pro_nbr.c \
 		  corewar/point_function_option.c \
 		  corewar/option_program.c \
 		  corewar/read_prog.c \
+		  SRC/my_free_tab.c \
+		  SRC/get_next_line.c \
+		  SRC/my_show_tab.c \
 	          SRC/my_strcpy.c\
+		  SRC/clear_str.c \
+		  SRC/clear_tab.c \
 	   	  SRC/my_strcmp.c \
 		  SRC/tool.c
 

@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Mar 18 16:29:04 2014 Maxime Limone
-** Last update Wed Mar 26 11:43:27 2014 Kevin Gay
+** Last update Wed Apr  2 17:06:42 2014 Kevin Gay
 ** Last update Wed Mar 19 15:07:04 2014 Kevin Gay
 */
 
@@ -38,17 +38,31 @@ typedef struct	s_core
   int		pa2;
   int		pa3;
   int		pa4;
+  int		p;
   char		*p1;
   char		*p2;
   char		*p3;
   char		*p4;
+  char		**war1;
+  char		**war2;
+  char		**war3;
+  char		**war4;
   struct s_pr	pr;
 }		t_core;
 
 typedef	int (*flag)(char *av, t_core *co, int p);
 
+char	**clear_tab(char **str, int nbr, int nb);
+int	free_war1(t_core *co);
+void	free_war2(t_core *co);
+void	free_war3(t_core *co);
+void	free_war4(t_core *co);
 int	find_option_dump(char **av, t_core *co);
 int	find_option_program(char **av, t_core *co, header_t *hd);
+void	free_war(t_core *co);
+char	*get_next_line(const int fd);
+void	my_free_tab(char **tab, int nbr);
+void	my_show_tab(char **tab);
 int	my_strcmp(char *str1, char *str2);
 int	my_strcmp_core(char *str1, char *str2);
 char    *my_strcpy(char *dest, char *src);

@@ -5,13 +5,18 @@
 ** Login   <gay_k@epitech.net>
 ** 
 ** Started on  Wed Mar 26 11:28:23 2014 Kevin Gay
-** Last update Wed Mar 26 13:31:22 2014 Kevin Gay
+** Last update Fri Mar 28 12:37:29 2014 Kevin Gay
 */
 
 #include "corewar.h"
 
 int	read_header1(t_core *co, header_t *hd)
 {
+  int	i;
+
+  i = -1;
+  while (++i != 128)
+    co->pr.nme1[i] = '\0';
   my_strcpy(co->pr.nme1, hd->prog_name);
   my_strcpy(co->pr.cmnt1, hd->comment);
   return (0);
