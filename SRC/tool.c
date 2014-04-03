@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Thu Mar 27 16:52:09 2014 Maxime Limone
-** Last update Thu Mar 27 16:52:17 2014 Maxime Limone
+** Last update Thu Apr  3 14:14:23 2014 Maxime Limone
 */
 
 #include <unistd.h>
@@ -19,8 +19,8 @@ int	my_strlen(char *str)
 {
   int	i;
 
-  i = 0;
-  while (str[i++] != '\0');
+  i = -1;
+  while (str[++i] != '\0');
   return (i);
 }
 

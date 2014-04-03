@@ -5,13 +5,14 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Mon Mar 24 16:18:26 2014 Maxime Limone
-** Last update Thu Mar 27 17:32:12 2014 Maxime Limone
+** Last update Thu Apr  3 13:32:32 2014 Maxime Limone
 */
 
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "asm.h"
 #include "asm_get_data_file.h"
 #include "put_infile_tool.h"
@@ -27,19 +28,18 @@ int		get_name(t_pars *s, header_t *o)
   i = 0;
   while (s->line[i] != '\"' && i < s->size_line)
     i++;
-  if (i == s->size_line)
+  if (i++ == s->size_line)
     {
-      my_err("invalid name syntax missing ‘\"’", s);
-	return (-3);
+      my_err("Syntax error on prog name, missing ‘\"’", s);
+      return (-3);
     }
   else
     {
-      i++;
       while (s->line[i] != '\"' && i < s->size_line)
 	o->prog_name[n++] = s->line[i++];
       if (s->line[i] != '\"')
 	{
-	  my_err("invalid name syntax missing ‘\"’", s);
+	  my_err("Syntax error on prog name, missing ‘\"’", s);
 	  return (-3);
 	}
       while (n != PROG_NAME_LENGTH+1)
@@ -57,19 +57,18 @@ int		get_comment(t_pars *s, header_t *o)
   i = 0;
   while (s->line[i] != '\"' && i < s->size_line)
     i++;
-  if (i == s->size_line)
+  if (i++ == s->size_line)
     {
-      my_err("invalid comment syntax missing ‘\"’", s);
+      my_err("Syntax error on prog comment, missing ‘\"’", s);
       return (-3);
     }
   else
     {
-      i++;
       while (s->line[i] != '\"' && i < s->size_line)
         o->comment[n++] = s->line[i++];
       if (s->line[i] != '\"')
         {
-	  my_err("invalid comment syntax missing ‘\"’", s);
+	  my_err("Syntax error on prog comment, missing ‘\"’", s);
           return (-3);
         }
       while (n != COMMENT_LENGTH+1)
@@ -107,15 +106,16 @@ int		print_in_file(t_pars *s, header_t *o)
 {
   int	fd;
 
-  if ((fd = open(my_strcat("t", new_name_cor(s->champ_name))
-		 ,O_TRUNC | O_CREAT | O_WRONLY)) == -1)
+  if ((fd = open(new_name_cor(s->champ_name)
+		 , O_CREAT | O_RDWR, S_IRWXU)) == -1)
     {
-      my_err("failed to create file [.cor]", s);
+      my_putstr("\e[1;31mError: failed to create file [.cor]\e[0m\n");
       return (-2);
     }
   my_putnbr_infile(invert_endian((o->magic = 0xea83f3)), fd);
   my_putstr_infile(o->prog_name, fd, PROG_NAME_LENGTH);
   my_putnbr_infile(invert_endian(0x04), fd);
   my_putstr_infile(o->comment, fd, COMMENT_LENGTH);
+  close(fd);
   return (0);
 }
