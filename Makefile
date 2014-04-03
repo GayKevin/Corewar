@@ -5,7 +5,7 @@
 ## Login   <limone_m@epitech.net>
 ## 
 ## Started on  Tue Mar 18 16:18:17 2014 Maxime Limone
-## Last update Thu Mar 27 18:15:09 2014 Kevin Gay
+## Last update Thu Apr  3 11:03:57 2014 Maxime Limone
 ## Last update Thu Mar 27 17:21:36 2014 Kevin Gay
 ## Last update Wed Mar 19 15:04:18 2014 Kevin Gay
 ## Last update Wed Mar 26 20:57:12 2014 Maxime Limone
@@ -14,11 +14,13 @@
 SRC_ASM		= asm/main.c \
 		  asm/gere_err.c \
 		  asm/get_data_file.c \
+		  asm/init_tab_asm.c \
                   asm/pars_file.c \
 		  asm/put_infile_tool.c \
 		  SRC/get_next_line.c \
 		  SRC/my_strcat.c \
 		  SRC/my_strcmp.c \
+		  SRC/str_to_wordtab.c \
 		  SRC/tool.c \
 
 SRC_COR		= corewar/main.c \
