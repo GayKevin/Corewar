@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Mar 18 16:20:48 2014 Maxime Limone
-** Last update Fri Mar 28 11:56:57 2014 Kevin Gay
+** Last update Wed Apr  2 16:58:05 2014 Kevin Gay
 */
 
 
@@ -26,6 +26,10 @@ int		main(int ac, char **av)
   if (find_option_dump(av, &co) == 1)
     return (1);
   if (find_option_program(av, &co, &hd) == 1)
-    return (1);
+    {
+      free_war(&co);
+      return (1);
+    }
+  free_war(&co);
   return (0);
 }
