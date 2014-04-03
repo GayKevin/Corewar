@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Mar 18 16:19:28 2014 Maxime Limone
-** Last update Thu Mar 27 17:27:10 2014 Maxime Limone
+** Last update Wed Apr  2 14:02:05 2014 Maxime Limone
 */
 
 #include <stdlib.h>
@@ -27,7 +27,7 @@ int		main(int argc, char **argv)
   s.champ_name = argv[1];
   if (check_file_name(s.champ_name) == -2)
     {
-      my_err("incompatible file (file type is [.s])", &s);
+      my_putstr("\e[1;31mError: incompatible file (file type is [.s])\e[0m\n");
       return (-2);
     }
   if ((s.fd = open(s.champ_name, O_RDONLY)) == -1)
