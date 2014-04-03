@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Wed Mar 19 19:23:38 2014 Maxime Limone
-** Last update Thu Apr  3 14:15:38 2014 Maxime Limone
+** Last update Thu Apr  3 15:17:56 2014 Maxime Limone
 */
 
 #include "asm.h"
@@ -68,8 +68,9 @@ int		pars_inst(t_pars *s, header_t *o)
   s->tab_inst_str = init_tab_inst_str(s->tab_inst_str);
   s->tab_inst_char = init_tab_inst_char(s->tab_inst_char);
   s->tab_file_str = str_to_wordtab(epur_str(s->line));
-  i = 0;
   if (s->tab_file_str[0][my_strlen(s->tab_file_str[0]) - 1] == ':')
-    my_putstr("lable\n");
+    my_putstr("label\n");
+  i = 0;
+  while (s->tab_file_str[0] != s->tab_inst_str[i]);
   return (0);
 }

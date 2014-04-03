@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Thu Apr  3 10:58:23 2014 Maxime Limone
-** Last update Thu Apr  3 14:11:09 2014 Maxime Limone
+** Last update Thu Apr  3 15:11:59 2014 Maxime Limone
 */
 
 #include <stdlib.h>
@@ -55,7 +55,7 @@ char		*epur_str(char *str)
   while ((str[i] == ' ') || (str[i] == '\t'))
     i++;
   while (str[i] != '\0')
-    if ((str[i] == ' ' || str[i] == '\t') &&
+    if ((str[i] == ' ' || str[i] == '\t' || str[i] == '\n') &&
         ((str[i + 1] == '\0') || (str[i + 1] == ' ' || str[i + 1] == '\t')))
       i++;
     else if ((str[i] == ' ' || str[i] == '\t') &&
