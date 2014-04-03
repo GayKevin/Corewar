@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Wed Mar 19 20:41:31 2014 Maxime Limone
-** Last update Wed Apr  2 15:55:31 2014 Kevin Gay
+** Last update Thu Apr  3 14:33:09 2014 Kevin Gay
 */
 
 #include <unistd.h>
@@ -27,14 +27,14 @@ char		*get_next_line(const int fd)
     exit(1);
   while (buffer[i] != '\n')
     {
-      str[c] = buffer[i];
-      if (buffer[i] == '\0')
-	return (NULL);
-      i = i + 1;
-      c = c + 1;
+      str[c++] = buffer[i++];
+      if (buffer[i - 1] == '\0')
+	{
+	  free(str);
+	  return (NULL);
+	}
     }
-  str[c] = '\n';
-  c++;
+  str[c++] = '\n';
   str[c] = '\0';
   i++;
   return (str);

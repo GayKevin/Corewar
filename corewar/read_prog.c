@@ -5,7 +5,7 @@
 ** Login   <gay_k@epitech.net>
 ** 
 ** Started on  Thu Mar 20 21:57:39 2014 Kevin Gay
-** Last update Wed Apr  2 16:26:05 2014 Kevin Gay
+** Last update Thu Apr  3 14:27:52 2014 Kevin Gay
 */
 
 #include <fcntl.h>
@@ -26,16 +26,15 @@ void	read_entire_file(t_core *co, header_t *hd, int fd, int p)
 {
   int	i;
 
-  i = -1;
+  i = 0;
   co->war1 = malloc(sizeof(char *) * 15);
-  while (++i != 15)
-    co->war1[i] = malloc(sizeof(char) * 520);
+  while (i != 15)
+    co->war1[i++] = malloc(sizeof(char) * 520);
   co->war1 = clear_tab(co->war1, 15, 520);
   i = -1;
   while (get_next_line(fd) != NULL)
     read(fd, co->war1[++i], 512);
   co->war1[++i] = NULL;
-  my_show_tab(co->war1);
 }
 
 int	read_file_cor(char *av, int p, t_core *co, header_t *hd)

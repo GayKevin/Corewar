@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Mar 18 16:29:04 2014 Maxime Limone
-** Last update Wed Apr  2 17:06:42 2014 Kevin Gay
+** Last update Thu Apr  3 13:54:22 2014 Kevin Gay
 ** Last update Wed Mar 19 15:07:04 2014 Kevin Gay
 */
 
@@ -53,7 +53,7 @@ typedef struct	s_core
 typedef	int (*flag)(char *av, t_core *co, int p);
 
 char	**clear_tab(char **str, int nbr, int nb);
-int	free_war1(t_core *co);
+void	free_war1(t_core *co);
 void	free_war2(t_core *co);
 void	free_war3(t_core *co);
 void	free_war4(t_core *co);
