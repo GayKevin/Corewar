@@ -1,16 +1,11 @@
 /*
-** tool.h for tool in /home/limone_m/rendu/CPE_2014_corewar/Include
+** tool.h for tool.h in /home/limone_m/rendu/CPE_2014_corewar
 ** 
 ** Made by Maxime Limone
 ** Login   <limone_m@epitech.net>
 ** 
-** Started on  Wed Mar 19 20:11:35 2014 Maxime Limone
-<<<<<<< HEAD
-** Last update Thu Apr  3 15:12:35 2014 Maxime Limone
-** Last update Wed Mar 26 20:43:33 2014 Maxime Limone
-=======
-** Last update Thu Apr  3 14:41:51 2014 Kevin Gay
->>>>>>> 4de9732262a251af3b95a9d14c2aa14b4392cd54
+** Started on  Wed Apr  9 18:36:45 2014 Maxime Limone
+** Last update Wed Apr  9 18:36:46 2014 Maxime Limone
 */
 
 #ifndef TOOL_H_
