@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Mon Mar 24 16:18:26 2014 Maxime Limone
-** Last update Thu Apr  3 15:11:31 2014 Maxime Limone
+** Last update Wed Apr  9 18:40:36 2014 Maxime Limone
 */
 
 #include <sys/types.h>
@@ -85,10 +85,11 @@ char		*new_name_cor(char *s_name)
 
   cor = ".cor";
   i = -1;
-  if ((cor_name = malloc(sizeof(*s_name) + 5)) == NULL)
+  if ((cor_name = malloc(sizeof(*s_name))) == NULL)
     return (NULL);
   while (s_name[++i] != '.')
     cor_name[i] = s_name[i];
+  cor_name[i] = '\0';
   cor_name = my_strcat(cor_name, cor);
   return (cor_name);
 }
@@ -116,6 +117,7 @@ int		print_in_file(t_pars *s, header_t *o)
   my_putstr_infile(o->prog_name, fd, PROG_NAME_LENGTH);
   my_putnbr_infile(invert_endian(0x04), fd);
   my_putstr_infile(o->comment, fd, COMMENT_LENGTH);
+  my_putstr_infile(s->wrt_inst_str, fd, my_strlen(s->wrt_inst_str) + 1);
   close(fd);
   return (0);
 }

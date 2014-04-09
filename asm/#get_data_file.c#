@@ -1,0 +1,69 @@
+/*
+** get_data_file.c for get_data_file in /home/limone_m/rendu/CPE_2014_corewar/asm
+** 
+** Made by Maxime Limone
+** Login   <limone_m@epitech.net>
+** 
+** Started on  Mon Mar 24 16:18:26 2014 Maxime Limone
+** Last update Wed Mar 26 20:33:12 2014 Maxime Limone
+*/
+
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include "asm.h"
+#include "asm_get_data_file.h"
+#include "put_infile_tool.h"
+#include "tool.h"
+#include "op.h"
+
+int		get_name(t_pars *s, header_t *o)
+{
+  int		n;
+  int		i;
+
+  n = 0;
+  i = 0;
+  while (s->line[i] != '\"' && i < s->size_line)
+    i++;
+  if (i == s->size_line)
+    {
+      my_err("invalid syntax missing ‘\"’", s);
+	return (-3);
+    }
+  else
+    {
+      i++;
+      while (s->line[i] != '\"' && i < s->size_line)
+	o->prog_name[n++] = s->line[i++];
+      if (s->line[i] != '\"')
+	{
+	  my_err("invalid syntax missing ‘\"’", s);
+	  return (-3);
+	}
+      while (n != PROG_NAME_LENGTH+1)
+	o->prog_name[n++] = '\0';
+      my_putstr_infile(o->prog_name, 1, PROG_NAME_LENGTH+1);
+      my_putchar('\n');
+    }
+}
+
+int		get_comment(t_pars *s, header_t *o)
+{
+  int		i;
+
+  i = 0;
+}
+
+void		new_name_cor(char *s_name)
+{
+  int		i;
+
+  i = 0;
+  while (s_name[i] != '\0')
+}
+
+int		print_in_file(t_pars *s, header_t *o)
+{
+  open("../")
+}

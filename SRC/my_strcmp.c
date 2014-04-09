@@ -1,20 +1,11 @@
 /*
-** my_strcmp.c for strcmp in /home/gay_k/rendu/PSU/PSU_2013_minishell1
+** my_strcmp.c for my_strcmp in /home/limone_m/rendu/CPE_2014_corewar/SRC
 ** 
-** Made by Kevin Gay
-** Login   <gay_k@epitech.net>
+** Made by Maxime Limone
+** Login   <limone_m@epitech.net>
 ** 
-** Started on  Wed Feb 26 13:33:18 2014 Kevin Gay
-<<<<<<< HEAD
-<<<<<<< HEAD
-** Last update Mon Mar 24 15:40:59 2014 Maxime Limone
-=======
-<<<<<<< HEAD
-** Last update Thu Mar 20 09:21:42 2014 Kevin Gay
->>>>>>> master
-=======
-** Last update Thu Mar 20 11:08:01 2014 Kevin Gay
->>>>>>> master
+** Started on  Thu Apr  3 16:05:44 2014 Maxime Limone
+** Last update Thu Apr  3 17:45:55 2014 Maxime Limone
 */
 
 #include "corewar.h"
@@ -26,7 +17,7 @@ int	my_strcmp(char *s1, char *s2)
 
   i = 0;
   diff = 0;
-  while (s1[i] != '\0' && s2[i] != '\0')
+  while (s1[i] != '\0' || s2[i] != '\0')
     {
       if (s1[i] != s2[i])
         diff = diff + 1;

@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Mar 18 17:06:04 2014 Maxime Limone
-** Last update Wed Apr  9 18:45:23 2014 Maxime Limone
+** Last update Thu Apr  3 15:11:54 2014 Maxime Limone
 */
 
 #include <stdlib.h>
@@ -24,8 +24,8 @@ int		check_file_name(char *file)
 
 int		check_param(char t, t_pars *s)
 {
-  if (t == 'r');
-  return (0);
+  if (t == 'r')
+    
 }
 
 void		my_err(char *message_err, t_pars *s)

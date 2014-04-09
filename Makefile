@@ -4,20 +4,21 @@
 ## Made by Maxime Limone
 ## Login   <limone_m@epitech.net>
 ## 
-## Started on  Wed Apr  9 18:36:02 2014 Maxime Limone
-## Last update Wed Apr  9 18:36:12 2014 Maxime Limone
+## Started on  Tue Mar 18 16:18:17 2014 Maxime Limone
+## Last update Wed Apr  9 18:55:02 2014 Maxime Limone
 ##
 
 SRC_ASM		= asm/main.c \
 		  asm/gere_err.c \
 		  asm/get_data_file.c \
-		  asm/init_tab_asm.c \
-                  asm/pars_file.c \
+		  asm/init_value_asm.c \
+	          asm/pars_file.c \
 		  asm/put_infile_tool.c \
 		  SRC/get_next_line.c \
+		  SRC/clear_str.c \
 		  SRC/my_strcat.c \
 		  SRC/my_strcmp.c \
-		  SRC/clear_str.c \
+		  SRC/op.c \
 		  SRC/str_to_wordtab.c \
 		  SRC/tool.c \
 
@@ -35,8 +36,8 @@ SRC_COR		= corewar/main.c \
 		  SRC/get_next_line.c \
 		  SRC/my_show_tab.c \
 	          SRC/my_strcpy.c\
-		  SRC/clear_str.c \
 		  SRC/clear_tab.c \
+		  SRC/clear_str.c \
 	   	  SRC/my_strcmp.c \
 		  SRC/tool.c
 

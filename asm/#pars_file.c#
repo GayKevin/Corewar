@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Wed Mar 19 19:23:38 2014 Maxime Limone
-** Last update Wed Apr  9 18:40:54 2014 Maxime Limone
+** Last update Wed Apr  9 17:47:46 2014 Maxime Limone
 */
 
 #include <stdlib.h>
@@ -106,7 +106,7 @@ int		pars_param(t_pars *s, op_t *t, int i)
     {
       while (s->tab_file_str[1][++f] != '\0')
 	{
-	  //my_putchar
+	  my_putchar
 	  while (++c < 3 && s->tab_file_str[1][f] != s->param_type[c]);
 	  while (s->tab_file_str[1][++f] != ',' && s->tab_file_str[1][f] != '\0')
 	    tmp_s[++tmp_i] = s->tab_file_str[1][f];

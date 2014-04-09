@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Wed Apr  2 18:04:21 2014 Maxime Limone
-** Last update Thu Apr  3 15:11:36 2014 Maxime Limone
+** Last update Thu Apr  3 18:01:08 2014 Maxime Limone
 */
 
 #include <stdlib.h>
@@ -16,7 +16,7 @@ char		**init_tab_inst_str(char **tab_inst_str)
   int		i;
 
   i = 0;
-  if ((tab_inst_str = malloc(sizeof(char *) * 16)) == NULL)
+  if ((tab_inst_str = malloc(sizeof(char *) * 17)) == NULL)
     return (NULL);
   while (i != 16)
     {
@@ -62,5 +62,6 @@ char		*init_tab_inst_char(char *tab_inst_char)
   tab_inst_char[13] = 14;
   tab_inst_char[14] = 15;
   tab_inst_char[15] = 16;
+  tab_inst_char[16] = '\0';
   return (tab_inst_char);
 }
