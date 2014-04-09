@@ -5,7 +5,11 @@
 ## Login   <limone_m@epitech.net>
 ## 
 ## Started on  Tue Mar 18 16:18:17 2014 Maxime Limone
+<<<<<<< HEAD
 ## Last update Thu Apr  3 14:39:24 2014 Kevin Gay
+=======
+## Last update Thu Apr  3 14:41:34 2014 Kevin Gay
+>>>>>>> 4de9732262a251af3b95a9d14c2aa14b4392cd54
 ##
 
 SRC_ASM		= asm/main.c \
