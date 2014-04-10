@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Wed Mar 19 19:23:38 2014 Maxime Limone
-** Last update Wed Apr  9 18:40:54 2014 Maxime Limone
+** Last update Thu Apr 10 13:44:12 2014 Maxime Limone
 */
 
 #include <stdlib.h>
@@ -24,8 +24,10 @@ int		pars_file_line(t_pars *s)
   op_t		t;
 
   s->nb_line = 1;
+  s->g_wrt = -1;
   init_param_type(s);
-  s->wrt_inst_str = malloc(sizeof(char) * 500);
+  if ((s->wrt_inst_str = malloc(sizeof(char) * 500)) == NULL)
+    return (-1);
   while ((s->line = get_next_line(s->fd)))
     {
       s->size_line = my_strlen(s->line);
@@ -82,39 +84,51 @@ int		pars_inst(t_pars *s, op_t *t)
     {
       if (realloc(s->wrt_inst_str, 5) == NULL)
 	return (-1);
-      s->wrt_inst_str[0] = op_tab[i].code;
+      s->wrt_inst_str[++s->g_wrt] = op_tab[i].code;
     }
-  if (pars_param(s, t, i) != 0)
-    return (-1);
+  if (op_tab[i].nbr_args > 1)
+    if (pars_param(s, t, i) != 0)
+      return (-1);
   return (0);
 }
 
 int		pars_param(t_pars *s, op_t *t, int i)
 {
-  char		*tmp_s;
-  int		tmp_i;
   int		c;
   int		f;
+  int		tb;
 
-  if ((tmp_s = malloc(sizeof(char) * my_strlen(s->tab_file_str[1]))) == NULL)
-    return (-1);
-  tmp_s = clean_str(tmp_s, my_strlen(s->tab_file_str[1]));
-  tmp_i = -1;
-  c = -1;
   f = -1;
-  if (op_tab[i].nbr_args > 1)
+  tb = -1;
+  if ((s->tmp_s = malloc(sizeof(char) * my_strlen(s->tab_file_str[1]))) == NULL)
+    return (-1);
+  while (s->tab_file_str[1][++f] != '\0')
     {
-      while (s->tab_file_str[1][++f] != '\0')
-	{
-	  //my_putchar
-	  while (++c < 3 && s->tab_file_str[1][f] != s->param_type[c]);
-	  while (s->tab_file_str[1][++f] != ',' && s->tab_file_str[1][f] != '\0')
-	    tmp_s[++tmp_i] = s->tab_file_str[1][f];
-	  tmp_s[++tmp_i] = '\0';
-	  my_putstr(tmp_s);
-	  //  check_param(s->param_type[c]);
-	}
+      c = -1;
+      s->tmp_i = -1;
+      s->tmp_s = clean_str(s->tmp_s, my_strlen(s->tab_file_str[1]));
+      while (++c < 3 && s->tab_file_str[1][f] != s->param_type[c]);
+      s->oc_codage = s->oc_codage << 2;
+      s->oc_codage += s->param_type[c + 3];
+      s->tab_param[++tb] = s->param_type[c + 6];
+      while (s->tab_file_str[1][++f] != SEPARATOR_CHAR
+	     && s->tab_file_str[1][f] != '\0')
+	s->tmp_s[++s->tmp_i] = s->tab_file_str[1][f];
+      s->tab_param[tb + 3] = my_getnbr(s->tmp_s);
     }
-  my_putstr(s->wrt_inst_str);
+  if (sw_occd(s, t, i) != 0)
+    return (-1);
+  return (0);
+}
+
+int		sw_occd(t_pars *s, op_t *t, int i)
+{
+  if (op_tab[i].nbr_args == 2)
+    s->oc_codage = s->oc_codage << 4;
+  else if (op_tab[i].nbr_args == 3)
+    s->oc_codage = s->oc_codage << 2;
+  s->wrt_inst_str[++s->g_wrt] = s->oc_codage;
+  if (pars_value(s, t, i) != 0)
+    return (-1);
   return (0);
 }

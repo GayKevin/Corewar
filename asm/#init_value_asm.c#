@@ -17,6 +17,7 @@ int		init_param_type(t_pars *s)
     return (-1);
   if ((s->tab_param = malloc(sizeof(int) * 9)) == NULL)
     return (-1);
+
   s->param_type[0] = 'r';
   s->param_type[1] = DIRECT_CHAR;
   s->param_type[2] = -1;

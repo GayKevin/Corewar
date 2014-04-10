@@ -5,7 +5,7 @@
 ## Login   <limone_m@epitech.net>
 ## 
 ## Started on  Tue Mar 18 16:18:17 2014 Maxime Limone
-## Last update Wed Apr  9 18:55:02 2014 Maxime Limone
+## Last update Thu Apr 10 13:10:14 2014 Maxime Limone
 ##
 
 SRC_ASM		= asm/main.c \
@@ -13,6 +13,7 @@ SRC_ASM		= asm/main.c \
 		  asm/get_data_file.c \
 		  asm/init_value_asm.c \
 	          asm/pars_file.c \
+		  asm/pars_value.c \
 		  asm/put_infile_tool.c \
 		  SRC/get_next_line.c \
 		  SRC/clear_str.c \
