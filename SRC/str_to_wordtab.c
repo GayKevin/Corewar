@@ -5,7 +5,7 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Thu Apr  3 10:58:23 2014 Maxime Limone
-** Last update Tue Apr  8 16:53:13 2014 Maxime Limone
+** Last update Thu Apr 10 14:32:38 2014 Maxime Limone
 */
 
 #include <stdlib.h>
@@ -37,7 +37,7 @@ char		**str_to_wordtab(char *str)
           tab[c][ci] = '\0';
         }
     }
-  showtab(tab);
+  //showtab(tab);
   return (tab);
 }
 

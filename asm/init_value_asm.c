@@ -5,11 +5,30 @@
 ** Login   <limone_m@epitech.net>
 ** 
 ** Started on  Tue Apr  8 18:18:59 2014 Maxime Limone
-** Last update Thu Apr 10 11:38:16 2014 Maxime Limone
+** Last update Sat Apr 12 13:42:56 2014 Maxime Limone
 */
 
 #include <stdlib.h>
 #include "asm.h"
+#include "tool.h"
+#include "op.h"
+
+int		init_tab_file_str(char **tab_file_str, char *src, t_pars *s)
+{
+  int		i;
+
+  i = 0;
+  if (s->line[i] == '\n')
+    return (-1);
+  if (s->tab_file_str[1] == NULL)
+    {
+      my_err("missing parameter for the instruction", s);
+      return (-1);
+    }
+  if (s->tab_file_str[0][my_strlen(s->tab_file_str[0]) - 1] == LABEL_CHAR)
+    my_putstr("label\n");
+  return (0);
+}
 
 int		init_param_type(t_pars *s)
 {
@@ -47,5 +66,34 @@ int		init_tab_idx(t_pars *s)
   s->tab_idx[10] = 12;
   s->tab_idx[11] = 1;
   s->tab_idx[12] = 0;
+  return (0);
+}
+
+int		init_type_p(t_pars *s)
+{
+  int		i;
+
+  i = -1;
+  if ((s->type_p = malloc(sizeof(*s->type_p) * 7)) == NULL)
+    return (-1);
+  while (i < 10)
+    if ((s->type_p[i++] = malloc(sizeof(**s->type_p) * 4)) == NULL)
+      return (-1);
+  s->type_p[0][0] = T_REG + T_DIR + T_IND;
+  s->type_p[1][0] = T_REG + T_DIR;
+  s->type_p[2][0] = T_REG + T_IND;
+  s->type_p[3][0] = T_DIR + T_IND;
+  s->type_p[4][0] = T_REG;
+  s->type_p[5][0] = T_DIR;
+  s->type_p[6][0] = T_IND;
+  s->type_p[0][1] = T_REG;
+  s->type_p[0][2] = T_DIR;
+  s->type_p[0][3] = T_IND;
+  s->type_p[1][1] = T_REG;
+  s->type_p[1][2] = T_DIR;
+  s->type_p[2][1] = T_REG;
+  s->type_p[2][2] = T_IND;
+  s->type_p[3][1] = T_DIR;
+  s->type_p[3][2] = T_IND;
   return (0);
 }
